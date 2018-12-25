@@ -1,5 +1,6 @@
-# circle-progress-bar-with-js
-It's a circle progress bar.
+# Personal portfolio with - SASS
+It's a personal portfolio use SASS.
+You can use the template for any personal or commersial purpose.
 
 
 ### Result 
