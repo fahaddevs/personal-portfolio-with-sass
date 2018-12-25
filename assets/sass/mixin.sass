@@ -1,0 +1,20 @@
+=transform($property)
+	-webkit-transform: $property
+	-ms-transform: $property
+	transform: $property
+
+=transition($value)
+	-webkit-transition: $value
+	-ms-transition: $value
+	transition: $value
+=border-radius($value)
+	-webkit-border-radius: $value
+	-moz-border-radius: $value
+	-ms-border-radius: $value
+	-o-border-radius: $value
+	border-radius: $value
+
+=media($arg)
+	@media screen and (max-width: $arg)
+		@content
+

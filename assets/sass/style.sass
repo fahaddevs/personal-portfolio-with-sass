@@ -1,0 +1,313 @@
+@import variable
+@import mixin
+@import extend
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font-family: $para-font
+	margin: 0
+	padding: 0
+img
+	width: 100%
+	height: auto
+
+ul
+	padding: 0
+	margin: 0
+	list-style: none
+h1, h2, h3, h4, h5, h6 
+	margin: 0
+	font-family: $heading-font
+	font-weight: 700
+h1 
+	font-size: 62px
+h2
+	font-size: 36px
+h3
+	font-size: 30px
+h4
+	font-size: 24px
+h5
+	font-size: 20px
+h6
+	font-size: 18px
+p 
+	margin: 0
+	line-height: 1.5
+	font-family: $para-font
+a, a:focus, a:active
+	color: #333333
+.section-padding
+	padding: $sectionpadding
+	+media(991)
+		padding: 50px 0
+.section-header
+	text-transform: capitalize
+	margin-bottom: 65px
+.navbar-brand 
+	color: #ffffff
+
+// header-section css
+
+.header-section
+	background: rgb(102, 102, 255)
+	.navbar-nav
+		li a
+			color: #ffffff
+			display: inline-block
+			padding: 10px 15px
+.navbar-toggler
+	i
+		color: #fff
+		font-size: 24px
+// banner-section css
+.banner-section
+	position: relative
+	background-image: url(../images/banner4.jpg)
+	height: 750px
+	+media(991px)
+		height: 650px
+	+media(575px)
+		height: 450px
+	&:before 
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient( -45deg, rgb(102, 102, 255) 0%, rgb(12, 31, 39) 100%)
+		opacity: 0.8
+	.banner-content-area
+		position: absolute
+		width: 100%
+		left: 0
+		top: 50%
+		+transform(translateY(-50%))
+
+.banner-content
+	h4
+		color: #ffffff
+		margin-bottom: 10px
+		+media(320px)
+			font-size: 18px
+	h1
+		color: #ffffff
+		margin-bottom: 15px
+		+media(575px)
+				font-size: 48px
+		+media(320px)
+			font-size: 32px
+	p
+		color: #f1f1f1
+	.grp-btn
+		margin-top: 25px
+		.cmn-btn
+			@extend %cmn-btn
+			&:hover 
+				background-color: $primary-color
+			&.hvr-btn
+				background-color: $primary-color
+				color: #ffffff
+		.cmn-btn+.cmn-btn
+			margin-left: 15px
+
+
+// about-section css
+
+.about-section
+	.section-header
+		margin-bottom: 30px
+.about-image
+	position: relative
+	z-index: 2
+	box-shadow: 14px 18px 86px 0px rgba(102, 102, 255, 0.83)
+	&:before
+		position: absolute
+		content: ''
+		top: -5%
+		left: -5%
+		width: 95%
+		height: 95%
+		background-color: $primary-color
+		z-index: -10
+	&:after
+		position: absolute
+		content: ''
+		bottom: -5%
+		right: -5%
+		width: 95%
+		height: 95%
+		background-color: $primary-color
+		z-index: -10
+.about-content
+	+media(991px)
+		margin-top: 85px
+	p 
+		margin-top: 20px
+.single-info
+	+media(480px)
+		flex-direction: column
+.single-info+.single-info
+	margin-top: 10px
+.info-left
+	-webkit-box-flex: 0
+	-ms-flex: 0 0 20%
+	flex: 0 0 20%
+	max-width: 20%
+	font-family: $heading-font
+	font-weight: 700
+	+media(460px)
+		flex: 0 0 100%
+		max-width: 100%
+.info-right
+	-webkit-box-flex: 0
+	-ms-flex: 0 0 80%
+	flex: 0 0 80%
+	max-width: 80%
+	font-family: $heading-font
+	font-weight: 500
+	+media(460px)
+		flex: 0 0 100%
+		max-width: 100%
+		margin-left: 15px
+
+// service-section
+.service-thumb
+	position: relative
+	img
+		filter: grayscale(100%)
+	&:before
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $primary-color
+		z-index: 2
+		opacity: 0.35
+.service-thumb 
+	background-image: url(../images/service.jpg)
+	min-height: 450px
+.service-item-part 
+	background-color: $primary-color
+	padding: 50px
+.ser-item
+	margin-bottom: 30px
+	h4
+		margin-bottom: 10px
+	h4,p,i
+		color: #ffffff
+	i
+		font-size: 36px
+		margin-bottom: 20px
+		display: inline-block
+
+.gallery-section
+	background-color: #000
+	.section-wrapper
+		margin-bottom: -30px
+	.section-header
+		text-align: center
+		h2
+			color: #fff
+	.gallery-thumb
+		margin-bottom: 30px
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: $primary-color
+			opacity: 0
+		a	
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 65px
+			height: 65px
+			overflow: hidden
+			+transform(scale(1.4, 1.4) translate(-30%, -30%))
+			.plus
+				@extend %plus-icon
+			+transition(0.3s)
+			opacity: 0
+		&:hover:before
+			opacity: $opacity
+		&:hover a
+			opacity: 1
+			+transform(scale(1, 1) translate(-50%, -50%))
+.contact-section
+	.cnt-info
+		background-color: #f9f9f9
+		padding: 30px
+		+transition(0.3s)
+		+border-radius(10px)
+		+media(767px)
+			margin-bottom: 30px
+		.cnt-info-icon
+			width: 97px
+			height: 97px
+			display: inline-block
+			+border-radius(50%)
+			background-color: #eeeeee
+			color: #666666
+			line-height: 97px
+			font-size: 38px
+			margin-bottom: 15px
+		.cnt-info-content
+			margin-top: 15px
+			h4
+				margin-bottom: 10px
+			span
+				display: block
+		&:hover
+			+transform(translateY(-5px))
+			background-color: $primary-color
+			-webkit-box-shadow: 0px 25px 35px 0px rgba(102, 102, 255, 0.15)
+			box-shadow: 0px 25px 35px 0px rgba(102, 102, 255, 0.15)
+		&:hover .cnt-info-icon
+			color: $primary-color
+			background-color: #fff
+		&:hover h4
+			color: #fff
+		&:hover span
+			color: #fff
+	.contact-form-part 
+		margin-top: 75px
+		.frm-grp+.frm-grp
+			margin-top: 30px
+		input, textarea
+			width: 100%
+			padding: 15px 30px
+			background-color: #fff
+			font-size: 18px
+			border-radius: 3px
+			border: 1px solid #ddd
+		input[type="email"]
+			+media(991px)
+				margin-top: 30px
+		textarea
+			min-height: 150px
+			resize: none
+		button	
+			@extend %cmn-btn
+			+border-radius(999px)
+			background-color: $primary-color
+			cursor: pointer
+.footer-section
+	padding: 25px
+	background-color: $primary-color
+	.social-links li
+		color: #fff
+	.social-links li+li 
+		margin-left: 8px
+	.social-links li a 
+		color: #fff
